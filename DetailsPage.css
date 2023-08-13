@@ -1,0 +1,399 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.639),rgba(0, 0, 0, 0.639)),url(images/DetailsBacground.jpeg );
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.Header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.71),rgba(0, 0, 0, 0.71));
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5%;
+    box-shadow: 0 10px 15px rgba(219, 13, 13, 0.1);
+}
+h1{
+    color: white;
+}
+h1 a{
+    color: aqua;
+}
+.Header ul{
+    list-style: none;
+    display: flex;
+}
+.Header ul li{
+    padding: 10px 30px;
+    position: relative;
+}
+.Header ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s;
+
+}
+.Header ul li a:hover{
+    color: aqua;
+}
+.subMenu{
+    display: none;
+ 
+}
+.Header ul li:hover .subMenu {
+    display: block;
+    background-color: aqua;
+    position: absolute;
+    left: 0%;
+    top: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
+    border-radius: 10%;
+    box-shadow: 0 10px 15px rgba(219, 13, 13, 0.1);
+    
+}
+.subMenu ul{
+    display: block;
+    margin: 5px;
+}
+.subMenu ul li a{
+    color: white;
+}
+.Summarytable{
+  margin-top: 8%;
+  margin-left: 58%;
+  width: 500px;
+  height: 400px;
+  padding: 0;
+}
+.Summarytable td{
+ border: 1px solid black;
+ border-radius: 5%;
+ text-align: left;
+ background-color: rgb(216, 216, 216);
+ color: solid black;
+}
+.Tickets td{
+  background-color: gray;
+}
+.Payable td{
+  background-color: gray;
+}
+  h2{
+    font-size: 25px;
+    color: ghostwhite;
+    margin-top: 2%;
+    margin-left: 5%;
+  }
+  .input {
+    margin-top: -41%;
+}
+  .input-control {
+    display: flex;
+    flex-direction: column;
+  }
+  .input-control label{
+    margin-top: 3%;
+    color: gainsboro;
+    margin-left: 5%;
+    margin-bottom: 1%;
+  }
+  .input-control input{
+    border: 2px solid #d3d2d2;
+    border-radius: 5px;
+    display: block;
+    font-size: 12px;
+    padding: 10px;
+    width: 37%;
+    margin-left: 4%;
+  }
+  .input-control input:focus{
+    outline: 0;
+  }
+  .input-control .success input{
+    border-color: #09c372;
+  }
+  .input-control .error input{
+    border-color: #ff3860;
+  }
+  .input-control .error{
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+  }
+
+  .input-control label i{
+    margin-right: 6px;
+  }
+ 
+
+  .selected-option .phone{
+     color: gainsboro;
+     margin-left: -2%;
+  }
+
+
+  .select-box {
+    position: absolute;
+    width: 28rem;
+    margin: 10rem auto;
+    margin-top: 3%;
+    margin-left: 4%;
+    
+
+}
+
+.select-box input {
+    width: 100%;
+    padding: 0.5rem .3rem;
+    font-size: 1.1rem;
+    
+    border: .1rem solid transparent;
+    outline: none;
+}
+
+input[type="tel"] {
+    border-radius: 0 .5rem .5rem 0; /* border of phone number */
+}
+
+.select-box input:focus {
+    border: 0.1rem solid var(--primary);
+}
+
+.selected-option {
+    background-color: #f7f4f4; /* the flag dispaying part */
+    border-radius: .5rem;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.selected-option div{
+    position: relative;
+    width: 6rem;
+    padding: 0 2.8rem 0 .5rem;
+    text-align: center;/* flag part*/
+    cursor: pointer;
+    background-color: #d3d2d2;
+}
+
+.selected-option div::after{
+    position: absolute;
+    content: "";
+    right: .8rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: .8rem;  /* the arrow in flag */
+    height: .8rem;
+    border-right: .12rem solid var(--primary);
+    border-bottom: .12rem solid var(--primary);
+    transition: .2s;
+}
+
+.selected-option div.active::after{
+    transform: translateY(-50%) rotate(225deg);
+}
+
+.select-box .options {
+    position: absolute;
+    top: 4rem;
+    width: 100%;
+    background-color: #fff; /* under the search option */
+    border-radius: .5rem;
+    display: none;
+}
+
+.select-box .options.active {
+    display: block;
+}
+
+.select-box .options::before {
+    position: absolute;
+    content: "";
+    left: 1rem;
+    top: -1.2rem;
+    width: 0;
+    height: 0;
+    border: 0.6rem solid transparent; /* the small arrow on top of the search option */
+    border-bottom-color: var(--primary);
+}
+
+input.search-box {
+    background-color: var(--primary);
+    color: black; /* the color of what you enter on search */
+    border-radius: .5rem .5rem 0 0;
+    padding: 1.4rem 1rem;
+}
+
+.select-box ol {
+    list-style: none;
+    max-height: 23rem;
+    overflow: overlay;
+    background-color: rgb(70, 69, 69);
+}
+
+.select-box ol::-webkit-scrollbar {
+    width: 0.6rem;
+}
+
+.select-box ol::-webkit-scrollbar-thumb {
+    width: 0.4rem;
+    height: 3rem;
+    background-color: #0c0b0b;
+    border-radius: .4rem;
+}
+
+.select-box ol li {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.select-box ol li.hide {
+    display: none;
+}
+
+.select-box ol li:not(:last-child) {
+    border-bottom: .1rem solid #eee;
+}
+
+.select-box ol li:hover {
+    background-color: lightcyan;
+}
+
+.select-box ol li .country-name {
+    margin-left: .4rem;
+}
+
+
+
+ button{
+  color: white;
+  background-color: black;
+  font-size: 18px;
+  margin-left: 38%;
+  margin-top: 13%;
+  padding: 1.5%;
+  }
+button:hover{
+    color: black;
+      background-color: ghostwhite;
+      font-size: 18px;
+    padding: 1.8%;
+  }
+button a{
+    color: white;
+    background-color: black;
+  }
+
+.BuyTicketFooter{
+    margin-top: 80px;
+    width: 100%;
+    padding: 5em;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.71),rgba(0, 0, 0, 0.71));
+    color: #efefef;
+    display: flex;
+    margin-left: 0%;
+  }
+  .BuyTicketFooter div{
+    text-align: center;
+  }
+  .BuyTicketFooter div h3{
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    font-size: 28px;
+    color: aqua;
+  }
+  .BuyTicket-col-1{
+    margin-right: 10%;
+  }
+  .BuyTicket-col-2{
+    margin-right: 10%;
+  }
+  .BuyTicket-col-3{
+    margin-right: 10%;
+  }
+  
+  .BuyTicket-col-1 ul li{
+    display: block;
+  }
+  
+  .BuyTicket-col-2 a{
+   display: block;
+   text-decoration: none;
+   color: #efefef;
+   margin-bottom: 10px;
+  }
+  .BuyTicket-col-2 a:hover{
+    color:  rgb(76, 240, 240);
+  }
+  .BuyTicket-socialicons{
+    margin-top: 30px;
+  }
+  .BuyTicket-socialicons i{
+    margin: 10px;
+    font-size: 35px;
+    cursor: pointer;
+  
+  }
+  .BuyTicket-socialicons i:hover{
+    color:  aqua;
+  }
+  
+
+  @media screen and (max-width: 600px) {
+    .Header{
+      background-image: linear-gradient(rgba(0, 0, 0, 0.71),rgba(0, 0, 0, 0.71));
+      height: 100px;
+      width: 1000px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5%;
+      box-shadow: 0 10px 15px rgba(219, 13, 13, 0.1);
+  }
+  button {
+    color: white;
+    background-color: black;
+    font-size: 20px;
+    margin-left: 66%;
+    margin-top: 7%;
+    padding: 2%;
+    border-radius: 16%;
+  }
+  .Summarytable{
+      margin-left: 70%;  
+  }
+  .select-box{
+    width: 13rem;
+  }
+  .form{
+    margin-top: 1%;
+  }
+  .BuyTicketFooter{
+    margin-top: 80px;
+    width: 1000px;
+    padding: 5em;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.71),rgba(0, 0, 0, 0.71));
+    color: #efefef;
+    display: flex;
+    margin-left: 0%;
+  }
+ 
+  }
